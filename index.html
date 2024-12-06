@@ -10,16 +10,22 @@
 <body>
     <div class="container">
         <h1 class="mt-5 mb-5">8-Bit Image Convertor</h1>
-        <div>
-            <img src="./images/newImg2.png" id="img_split">
+        <div class="mb-5">
+            <img src="./images/newImg2.png" id="imageSource">
         </div>
         <div class="row">
-            <button type="button" class="btn btn-secondary mb-3 mr-2" id="test">Render</button>
+            <form action="">
+                <input type="text" placeholder="URL of Image" >
+            </form>
+            
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-secondary mb-3 mr-2" id="renderButton">Render</button>
             <button type="button" class="btn btn-outline-primary mb-3" id="upload">Upload</button>
         </div>
         <div class="row">
             <div class="col card">
-                <canvas id="canvas" class="mt-3 mb-3"></canvas>
+                <canvas id="canvasOriginal" class="mt-3 mb-3"></canvas>
                 <p>Original Image</p>
             </div>
             <div class="col card">
