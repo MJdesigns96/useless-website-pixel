@@ -13,6 +13,7 @@ function main() {
     ctx.drawImage(img1, 0, 0);
     
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    // console.log(imageData);
     return imageData;
 };
 
@@ -29,6 +30,7 @@ function buildRGB(imageData) {
         };
         rgbValues.push(rgb);
     }
+    // console.log(rgbValues);
     return rgbValues;
 }
 
@@ -69,6 +71,7 @@ function commonCol(imgdata) {
     temp.forEach(pair => {
         keys.push(pair[0]);
     });
+    console.log(keys);
     return keys;
 }
 
@@ -86,13 +89,15 @@ function paintCanvas(){
     })
     console.log(split);
 
-    let count = 0;
-    for (let i = 0; i < 64*64*4; i += 4) {
-        data[i] = split[count][0];
-        data[i+1] = split[count][1];
-        data[i+2] = split[count][2];
-        data[i+3] = split[count][3];
-        count++
+    if (commonKeys !== undefined) {
+        let count = 0;
+        for (let i = 0; i < 64*64*4; i += 4) {
+            data[i] = split[count][0];
+            data[i+1] = split[count][1];
+            data[i+2] = split[count][2];
+            data[i+3] = split[count][3];
+            count++
+        }
     }
 
     // console.log(imageData);
